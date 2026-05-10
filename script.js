@@ -8,7 +8,7 @@
 let quotes = [];
 let lastIndex = -1;
 
-fetch('quotes.json')
+fetch('quotes.json?v=' + Date.now())
   .then(res => res.json())
   .then(data => {
     quotes = data;
@@ -47,3 +47,4 @@ function showQuote() {
     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
+
