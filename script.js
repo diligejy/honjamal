@@ -211,11 +211,28 @@ const quotes = [
   
 ]
 ;
+let lastIndex = -1;
+
+function showQuote() {
+  if (quotes.length === 0) return;
+
+  let index;
+  do {
+    index = Math.floor(Math.random() * quotes.length);
+  } while (quotes.length > 1 && index === lastIndex);
+  lastIndex = index;
+
+  const q = quotes[index];
   const quoteText = document.getElementById('quote-text');
   const quoteSource = document.getElementById('quote-source');
   
   if (quoteText) quoteText.textContent = q.text;
-  if (quoteSource) quoteSource.textContent = q.book ? (q.author ? q.book + ', ' + q.author : q.book) : (q.author || '');
+  if (quoteSource) {
+    const source = [];
+    if (q.book) source.push(q.book);
+    if (q.author) source.push(q.author);
+    quoteSource.textContent = source.join(', ');
+  }
 
   const card = document.getElementById('quote-card');
   if (card) {
@@ -228,8 +245,3 @@ const quotes = [
     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
-
-// 페이지 로드 시 바로 한 번 실행하고 싶다면 아래 주석 해제
-// window.onload = showQuote;
-
-
