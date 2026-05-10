@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>혼잣말</title>
+  <title>혼자말</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
@@ -12,27 +12,26 @@
 <body>
   <div class="container">
     <header>
-      <h1>혼잣말</h1>
-      <p class="privacy-note">여기에 적은 것은 아무에게도, 어디에도 저장되지 않아요.</p>
+      <h1>혼자말</h1>
+      <p class="privacy-note">우리의 말은 당신에게 위로가 됩니다.</p>
     </header>
 
     <main>
       <textarea
         id="input"
-        placeholder="오늘 어떤 일이 있었나요?&#10;&#10;아무 말이나 괜찮아요."
+        placeholder="지친 당신에게 필요한 문장을 찾아드릴게요. 아래 버튼을 눌러보세요."
         rows="6"
       ></textarea>
 
-      <button id="btn" onclick="showQuote()">글귀 받기</button>
+      <button id="btn" onclick="showQuote()">문장 읽기</button>
 
       <div id="quote-card" class="quote-card hidden">
         <blockquote id="quote-text"></blockquote>
         <p id="quote-source"></p>
-        <button id="another-btn" onclick="showQuote()">다른 글귀 보기</button>
+        <button id="another-btn" onclick="showQuote()">다른 문장 더 보기</button>
       </div>
     </main>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
