@@ -1,6 +1,4 @@
 ﻿node_modules/
-package-lock.json
-package.json
-tests/
 encoding_test.txt
 .vitest-result/
+.DS_Store
