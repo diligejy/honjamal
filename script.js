@@ -46,5 +46,12 @@ function showQuote() {
     card.style.animation = '';
     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'quote_view', {
+      quote_text: q.text.slice(0, 100),
+      quote_source: q.book || q.author || 'unknown',
+    });
+  }
 }
 
